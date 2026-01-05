@@ -160,6 +160,50 @@
             color:#5cb85c;
             font-weight: bold;
          }
+            /*Footer*/
+            footer
+            {
+                background-color: #333;
+                color:#fff;
+                display: flex;
+                justify-content: space-around;
+                padding:30px 20px;
+                flex-wrap: wrap;
+            }
+            footer h4
+            {
+                margin-bottom: 15px;
+            }
+            footer ul
+            {
+                list-style: none;
+            }
+            footer ul li
+            {
+                margin-bottom: 10px;
+            }
+            footer ul li a
+            {
+                text-decoration: none;
+                color:#fff;
+            }
+            .subscribe input[type="email"]
+            {
+                padding:8px;
+                width: 200px;
+                border:none;
+                border-radius: 5px;
+                margin-right: 10px;
+            }
+            .subscribe button
+            {
+                padding:8px 15px;
+                border:none;
+                border-radius: 5px;
+                background-color: #5cb85c;
+                color:#fff;
+                cursor: pointer;
+            }
         /*Media queries*/
         @media (max-width:768px) {
             nav {
@@ -186,6 +230,12 @@
             {
                 flex-direction: column;
                 align-items: center;
+            }
+            footer
+            {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
             }
 
         }
@@ -260,6 +310,30 @@
           </div>
         </div>
     </section>
+    <!--Footer-->
+    <footer>
+        <div>
+            <h4>ZayShop</h4>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Shop</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Products</h4>
+            <ul>
+                <li><a href="">Watches</a></li>
+                <li><a href="">Shoes</a></li>
+                <li><a href="">Accessories</a></li>
+        </div>
+        <div class="subscribe">
+            <h4>Subscribe to our newsletter</h4>
+            <input type="email" placeholder="Enter your email">
+            <button>Subscribe</button>
+        </div>
+    </footer>
 </body>
 
 </html>
