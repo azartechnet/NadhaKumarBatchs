@@ -1,0 +1,32 @@
+<!--Employee Management System-->
+<script>
+    class Employee
+    {
+        constructor(name,salary)
+        {
+            this.name=name;
+            this.salary=salary;
+        }
+        //Method 1
+        getDetails()
+        {
+            return `EmployeeName::${this.name},Salary:${this.salary}`;
+        }
+        //Method 2
+        increaseSalary(amount)
+        {
+            this.salary+=amount;
+            return `Updated Salary:${this.salary}`;
+        }
+        //Method 3
+        annualSalary()
+        {
+            return this.salary*12;
+        }
+    }
+    //creating Object 
+    const emp1=new Employee("Azar",20000);
+    console.log(emp1.getDetails());
+    console.log(emp1.increaseSalary(5000));
+    console.log("AnnualSalary::",emp1.annualSalary());
+</script>

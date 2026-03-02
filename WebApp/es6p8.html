@@ -1,0 +1,17 @@
+<!--Abstraction-->
+<script>
+    class Car
+    {
+        startEngine()
+        {
+            console.log("EngineStarted")
+        }
+        drive()
+        {
+            this.startEngine();//Internal Logic hidden
+            console.log("Car is moving");
+        }
+    }
+    const myCar=new Car();
+    myCar.drive();
+</script>
