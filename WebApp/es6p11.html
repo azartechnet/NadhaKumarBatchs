@@ -1,0 +1,28 @@
+<script>
+    class Person
+    {
+        constructor(name)
+        {
+            this.name=name;
+        }
+        greet()
+        {
+            console.log("Hello"+this.name)
+        }
+    }
+    class Student extends Person
+    {
+        constructor(name,grade)
+        {
+            super(name);//call parent constructor
+            this.grade=grade;
+        }
+        showGrade()
+        {
+            console.log("Grade::"+this.grade)
+        }
+    }
+    const s1=new Student("Azar","A");
+    s1.greet()//From Person
+    s1.showGrade()//From Student
+</script>
