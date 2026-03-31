@@ -180,7 +180,7 @@ r1.render(<UserInfo name="azar" age="30"/>)*/
 
 //Styling in React
 
-import './index.css';
+/*import './index.css';
 
 function Sample()
 {
@@ -196,4 +196,53 @@ function Sample()
     )
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Sample/>)
+r1.render(<Sample/>)*/
+
+//constructor using super
+/*class Sample extends React.Component
+{
+    constructor()
+    {
+        super();
+        this.state={name:"Azar",age:20}
+    }
+    render()
+    {
+        return(
+            <div>
+                <h1>Name::{this.state.name}</h1>
+                <p>Age::{this.state.age}</p>
+            </div>
+        )
+    }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)*/
+
+class Counter extends React.Component
+{
+    constructor(props)
+    {
+        super(props);
+        this.state={count:0}
+    }
+    increment=()=>{
+        this.setState({count:this.state.count+1})
+    }
+    decrement=()=>{
+        this.setState({count:this.state.count-1})
+    }
+    render()
+    {
+        return(
+            <div>
+                <h1>Counter App</h1>
+                <h2>Count::{this.state.count}</h2>
+                <button onClick={this.increment}>Increment</button>
+                <button onClick={this.decrement}>Decrement</button>
+            </div>
+        )
+    }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Counter/>)
