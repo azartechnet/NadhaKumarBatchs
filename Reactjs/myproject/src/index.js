@@ -219,7 +219,7 @@ r1.render(<Sample/>)*/
 const r1=ReactDOM.createRoot(document.getElementById('root'))
 r1.render(<Sample/>)*/
 
-class Counter extends React.Component
+/*class Counter extends React.Component
 {
     constructor(props)
     {
@@ -245,4 +245,99 @@ class Counter extends React.Component
     }
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Counter/>)
+r1.render(<Counter/>)*/
+
+//React Hooks useState
+import { useState } from "react";
+/*function Counter()
+{
+    const [count,setCount]=useState(0);
+    return(
+        <div>
+            <h1>Counter App</h1>   
+            <button onClick={()=>setCount(count+1)}>Increment</button>
+            <h2>Count::{count}</h2>
+            <button onClick={()=>setCount(count-1)}>Decrement</button>
+        </div>
+    )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Counter/>)*/
+
+//useEffect Hook
+/*import { useEffect } from "react";
+function Timer()    
+{
+    const [time,setTime]=useState(new Date().toLocaleTimeString());
+    useEffect(()=>{
+        const timer=setInterval(()=>{
+            setTime(new Date().toLocaleTimeString())
+        }
+        ,1000);
+        return()=>{
+            clearInterval(timer);
+        }
+    },[])
+    return(
+        <div>
+            <h1>Timer App</h1>
+            <h2>Time::{time}</h2>
+        </div>
+    )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Timer/>)*/
+
+//React without useContext
+
+/*function Component1()
+{
+    const [user,setUser]=useState("Azar");
+    return(
+        <div>
+            <h1>Component 1</h1>
+            <p>User::{user}</p>
+            <Component2 user={user}/>
+        </div>
+    )
+}
+function Component2(props)
+{
+    return(
+        <div>
+            <h1>Component 2</h1>
+            <p>User::{props.user}</p>
+        </div>
+    )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Component1/>)*/
+
+//React with useContext
+import { createContext } from "react";
+const UserContext=createContext();
+function Component1()
+{
+    const [user,setUser]=useState("Azar");
+    return(
+        <UserContext.Provider value={user}>
+        <div>
+            <h1>Component 1</h1>
+            <p>User::{user}</p>
+            <Component2/>
+        </div>
+        </UserContext.Provider>
+    )
+}
+function Component2()
+{
+    const user=useContext(UserContext);
+    return(
+        <div>
+            <h1>Component 2</h1>
+            <p>User::{user}</p>
+        </div>
+    )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Component1/>)
