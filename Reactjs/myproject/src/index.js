@@ -314,7 +314,7 @@ const r1=ReactDOM.createRoot(document.getElementById('root'))
 r1.render(<Component1/>)*/
 
 //React with useContext
-import { createContext } from "react";
+/*import { createContext } from "react";
 const UserContext=createContext();
 function Component1()
 {
@@ -340,4 +340,24 @@ function Component2()
     )
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Component1/>)
+r1.render(<Component1/>)*/
+
+//useRef 
+import { useRef } from "react";
+function FocusInput()
+{
+    const inputRef=useRef(null);
+    const handleClick=()=>{
+        inputRef.current.focus();
+    }
+    return(
+        <div>
+            <h1>Focus Input</h1>
+            <input type="text" ref={inputRef}/>
+            <button onClick={handleClick}>Focus Input</button>
+        </div>
+    )
+
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<FocusInput/>)
